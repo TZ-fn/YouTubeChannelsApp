@@ -3,3 +3,5 @@ Na początku poprawiłem kilka błędów które wskazały mi lintery (z ważniej
 Następnie zabrałem się za stylowanie loga JS w headerze. Początkowo chciałem użyć normalnego tekstu w HTMLu, ale po namyśle postanowiłem użyć pseudo elementu, bo logo ma charakter dekoracyjny.
 
 Chciałem dodać routing zwracający channels.json. W trakcie kodowania routera okazało się, że plik z danymi jest już zwracany bezpośrednio pod adresem /channels.json. Pomimo tego dodałem moją wersję używającą routera i zwracająca dane pod adresem /channels.
+
+Dodałem js do projektu, stworzyłem osobną funkcję do pobierania danych oraz osobną do generowania HTMLu z pobranych danych.
