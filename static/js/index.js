@@ -1,22 +1,74 @@
 import { fetchChannels } from './fetchChannels.js';
 import { createChannelCard } from './createChannelCard.js';
+import { sortChannels } from './sortChannels.js';
 
 const documentBody = document.querySelector('.wrapper');
+const channelsListWrapper = document.querySelector('.js-content');
+const filterInput = document.querySelector('#filter-input');
+const sortOptions = document.querySelector('.sort__options');
+const clearButton = document.querySelector('#clear-button');
+const orderButton = document.querySelector('#order-button');
 const reverseColorsButton = document.querySelector('#reverse-colors-button');
-reverseColorsButton.addEventListener('click', () => documentBody.classList.toggle('inverted'));
 
-function handleCardClick(e) {
-  console.log((e.currentTarget.querySelector('.card__channel-link').href += `?${Date.now()}`));
+const channelsData = await fetchChannels();
+// save the default data
+const defaultData = [...channelsData];
+let sortedChannels = channelsData;
+let isDescendingOrder = true;
+let sortBy = 'sort-title';
+
+function renderChannelCards() {
+  channelsListWrapper.replaceChildren();
+  sortedChannels.map((element) => {
+    let channelCard = createChannelCard(element);
+    channelsListWrapper.append(channelCard);
+  });
+  [...channelsListWrapper.childNodes].forEach((child) =>
+    child.addEventListener('click', (e) => handleCardClick(e)),
+  );
 }
 
-const channelsListWrapper = document.querySelector('.js-content');
-const channels = await fetchChannels();
+// event handlers
+function handleCardClick(e) {
+  e.currentTarget.querySelector('.card__channel-link').href += `?${Date.now()}`;
+}
 
-channels.map((element) => {
-  let channelCard = createChannelCard(element);
-  channelsListWrapper.append(channelCard);
-});
+function handleFilterInputChange(e) {
+  sortedChannels = channelsData.filter(({ title }) =>
+    title.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()),
+  );
+  renderChannelCards();
+}
 
-[...channelsListWrapper.childNodes].forEach((child) =>
-  child.addEventListener('click', (e) => handleCardClick(e)),
-);
+function handleSortOptionsChange(e) {
+  sortBy = e.target.id;
+  sortedChannels = sortChannels(sortedChannels, sortBy, isDescendingOrder);
+  renderChannelCards();
+}
+
+function handleClearButtonClick() {
+  filterInput.value = '';
+  sortedChannels = defaultData;
+  renderChannelCards();
+}
+
+function handleOrderButtonClick() {
+  if (isDescendingOrder) {
+    orderButton.textContent = 'Order: ascending ⬆️';
+  }
+  if (!isDescendingOrder) {
+    orderButton.textContent = 'Order: descending ⬇️';
+  }
+  isDescendingOrder = !isDescendingOrder;
+  sortedChannels = sortChannels(sortedChannels, sortBy, isDescendingOrder);
+  renderChannelCards();
+}
+
+filterInput.addEventListener('input', (e) => handleFilterInputChange(e));
+sortOptions.addEventListener('change', (e) => handleSortOptionsChange(e));
+clearButton.addEventListener('click', handleClearButtonClick);
+orderButton.addEventListener('click', (e) => handleOrderButtonClick(e));
+reverseColorsButton.addEventListener('click', () => documentBody.classList.toggle('inverted'));
+
+// render default cards on the first run
+renderChannelCards();
