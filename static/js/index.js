@@ -6,6 +6,7 @@ const documentBody = document.querySelector('.wrapper');
 const channelsListWrapper = document.querySelector('.js-content');
 const filterInput = document.querySelector('#filter-input');
 const sortOptions = document.querySelector('.sort__options');
+const sortRadioButtons = document.querySelectorAll('.choice--radio');
 const clearButton = document.querySelector('#clear-button');
 const orderButton = document.querySelector('#order-button');
 const reverseColorsButton = document.querySelector('#reverse-colors-button');
@@ -45,6 +46,7 @@ function handleSortOptionsChange(e) {
 }
 
 async function handleClearButtonClick() {
+  [...sortRadioButtons].forEach((radio) => (radio.checked = false));
   filterInput.value = '';
   sortedChannels = await fetchChannels();
   renderChannelCards();
