@@ -12,3 +12,7 @@ Nie chciałem modyfikować danych w pliku channels.json aby symulować pracę z 
 Zakodowałem brakujące elementy do funkcji tworzącej karty, zmodyfikowałem CSS aby był jak najbardziej zbliżony do zrzutów ekranu.
 
 Dodałem link do kanału do każdej z kart, kliknięcie na kartę dodaje aktualny timestamp do adresu jako UTM.
+
+Stworzyłem funkcję sortChannels, która przyjmuje 3 parametry: tablicę kanałów, zmienną według której ma sortować i boolean wskazujący na kolejność sortowania.
+Dodałem buttony pozwalające na zmianę kolejności sortowania or logikę odpowiedzialną za działanie buttona "Clear" i filtrowanie wyników.
+Wyniki odświeżają się po każdej zmianie wartości według której mają być sortowane, zmianie kolejności wyników lub zmianie wartości pola filtrowania.
