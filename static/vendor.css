@@ -269,6 +269,7 @@ button:-moz-focusring {
 }
 
 .card__channel-link {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
