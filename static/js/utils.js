@@ -1,4 +1,4 @@
-function clearNumber(number) {
+export function clearNumber(number) {
   return number.replace(/,+|\.+| +/g, '');
 }
 
