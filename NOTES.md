@@ -5,3 +5,5 @@ Następnie zabrałem się za stylowanie loga JS w headerze. Początkowo chciałe
 Chciałem dodać routing zwracający channels.json. W trakcie kodowania routera okazało się, że plik z danymi jest już zwracany bezpośrednio pod adresem /channels.json. Pomimo tego dodałem moją wersję używającą routera i zwracająca dane pod adresem /channels.
 
 Dodałem js do projektu, stworzyłem osobną funkcję do pobierania danych oraz osobną do generowania HTMLu z pobranych danych.
+
+Stworzyłem funkcje formatujące liczby otrzymywane z API. Pierwsza funkcja usuwa z liczby niepotrzebne przecinki, kropki i spacje. Druga formatuje tak "oczyszczoną" liczbę do notacji imperialnej.
