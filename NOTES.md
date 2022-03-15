@@ -9,4 +9,6 @@ Dodałem pliki js do projektu, stworzyłem osobną funkcję do pobierania danych
 Stworzyłem funkcje formatujące liczby otrzymywane z API. Pierwsza funkcja usuwa z liczby niepotrzebne przecinki, kropki i spacje. Druga formatuje tak "oczyszczoną" liczbę do notacji imperialnej.
 Nie chciałem modyfikować danych w pliku channels.json aby symulować pracę z danymi z API na które nie mamy wpływu.
 
-Dodałem brakujące elementy do funkcji tworzącej karty, zmodyfikowałem CSS aby był jak najbardziej zbliżony do zrzutów ekranu.
+Zakodowałem brakujące elementy do funkcji tworzącej karty, zmodyfikowałem CSS aby był jak najbardziej zbliżony do zrzutów ekranu.
+
+Dodałem link do kanału do każdej z kart, kliknięcie na kartę dodaje aktualny timestamp do adresu jako UTM.
