@@ -268,7 +268,7 @@ button:-moz-focusring {
   padding: 0.5rem 0;
 }
 
-.card__wrapper {
+.card__channel-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,14 +277,20 @@ button:-moz-focusring {
   height: 25rem;
   margin: 0.2rem;
   background-color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
-.card__wrapper:hover {
+.card__channel-link:visited {
+  color: #000;
+}
+
+.card__channel-link:hover {
   z-index: 2;
-  box-shadow: 0.7px 0.7px 1.1px hsl(0deg 0% 63% / 0.36),
-    2.2px 2.2px 3.5px -0.8px hsl(0deg 0% 63% / 0.36),
-    5.4px 5.4px 8.6px -1.7px hsl(0deg 0% 63% / 0.36),
-    13.2px 13.3px 21.1px -2.5px hsl(0deg 0% 63% / 0.36);
+  box-shadow: 0.7px 0.7px 1.1px hsl(0deg 0% 63% / 36%),
+    2.2px 2.2px 3.5px -0.8px hsl(0deg 0% 63% / 36%), 5.4px 5.4px 8.6px -1.7px hsl(0deg 0% 63% / 36%),
+    13.2px 13.3px 21.1px -2.5px hsl(0deg 0% 63% / 36%);
 }
 
 .card__logo {
@@ -327,6 +333,13 @@ button:-moz-focusring {
   font-size: 1.1rem;
   color: #000;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 365px) {
+  .card__logo {
+    height: 135px;
+    width: 135px;
+  }
 }
 
 @media only screen and (min-width: 544px) {

@@ -4,6 +4,11 @@ export function createChannelCard(cardData) {
   const card = document.createElement('div');
   card.classList.add('card__wrapper');
 
+  // create a link to the channel
+  const channelLink = document.createElement('a');
+  channelLink.classList.add('card__channel-link');
+  channelLink.setAttribute('href', cardData.customUrl);
+
   // create card logo
   const logo = document.createElement('img');
   logo.classList.add('card__logo');
@@ -49,8 +54,10 @@ export function createChannelCard(cardData) {
 
   stats.append(subs, videos, views);
 
-  card.append(logo);
-  card.append(title);
-  card.append(stats);
+  channelLink.append(logo);
+  channelLink.append(title);
+  channelLink.append(stats);
+  card.append(channelLink);
+
   return card;
 }
