@@ -1,9 +1,12 @@
-Na początku poprawiłem kilka błędów które wskazały mi lintery (z ważniejszych: dodałem atrybut "lang" do tagu 'html' oraz "viewport" 'meta' tag).
+Na początku poprawiłem kilka błędów które wskazały mi lintery (z ważniejszych: dodałem atrybut "lang" do tagu 'html' oraz meta tag "viewport" ).
 
-Następnie zabrałem się za stylowanie loga JS w headerze. Początkowo chciałem użyć normalnego tekstu w HTMLu, ale po namyśle postanowiłem użyć pseudo elementu, bo logo ma charakter dekoracyjny.
+Następnie zabrałem się za stylowanie loga JS w headerze. Początkowo chciałem użyć normalnego tekstu w HTMLu, ale po namyśle postanowiłem użyć pseudo elementu, ponieważ logo ma charakter dekoracyjny.
 
-Chciałem dodać routing zwracający channels.json. W trakcie kodowania routera okazało się, że plik z danymi jest już zwracany bezpośrednio pod adresem /channels.json. Pomimo tego dodałem moją wersję używającą routera i zwracająca dane pod adresem /channels.
+Chciałem dodać routing zwracający channels.json. W trakcie kodowania routera okazało się, że plik z danymi jest już zwracany bezpośrednio pod adresem '/channels.json'. Pomimo tego dodałem moją wersję używającą routera i zwracająca dane pod adresem /channels.
 
-Dodałem js do projektu, stworzyłem osobną funkcję do pobierania danych oraz osobną do generowania HTMLu z pobranych danych.
+Dodałem pliki js do projektu, stworzyłem osobną funkcję do pobierania danych oraz osobną do generowania HTMLu z pobranych danych.
 
 Stworzyłem funkcje formatujące liczby otrzymywane z API. Pierwsza funkcja usuwa z liczby niepotrzebne przecinki, kropki i spacje. Druga formatuje tak "oczyszczoną" liczbę do notacji imperialnej.
+Nie chciałem modyfikować danych w pliku channels.json aby symulować pracę z danymi z API na które nie mamy wpływu.
+
+Dodałem brakujące elementy do funkcji tworzącej karty, zmodyfikowałem CSS aby był jak najbardziej zbliżony do zrzutów ekranu.
