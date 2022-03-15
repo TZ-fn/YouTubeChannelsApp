@@ -1,6 +1,7 @@
 import { fetchChannels } from './fetchChannels.js';
 import { createChannelCard } from './createChannelCard.js';
 import { sortChannels } from './sortChannels.js';
+import { saveAppVisits } from './saveAppVisits.js';
 
 const documentBody = document.querySelector('.wrapper');
 const channelsListWrapper = document.querySelector('.js-content');
@@ -72,3 +73,11 @@ reverseColorsButton.addEventListener('click', () => documentBody.classList.toggl
 
 // render default cards on the first run
 renderChannelCards();
+saveAppVisits();
+
+// log the visit stats
+console.log(
+  ` Visited ${localStorage.getItem('visits-count')} times. Last visit: ${localStorage.getItem(
+    'last-visit-date',
+  )}`,
+);
