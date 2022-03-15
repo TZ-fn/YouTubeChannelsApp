@@ -1,5 +1,5 @@
 function clearNumber(number) {
-  return number.replace(/,|\.| /g, '');
+  return number.replace(/,+|\.+| +/g, '');
 }
 
 export function formatNumberToImperial(number) {
