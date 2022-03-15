@@ -11,8 +11,6 @@ const orderButton = document.querySelector('#order-button');
 const reverseColorsButton = document.querySelector('#reverse-colors-button');
 
 const channelsData = await fetchChannels();
-// save the default data
-const defaultData = [...channelsData];
 let sortedChannels = channelsData;
 let isDescendingOrder = true;
 let sortBy = 'sort-title';
@@ -46,9 +44,9 @@ function handleSortOptionsChange(e) {
   renderChannelCards();
 }
 
-function handleClearButtonClick() {
+async function handleClearButtonClick() {
   filterInput.value = '';
-  sortedChannels = defaultData;
+  sortedChannels = await fetchChannels();
   renderChannelCards();
 }
 
