@@ -18,3 +18,5 @@ Dodałem buttony pozwalające na zmianę kolejności sortowania or logikę odpow
 Wyniki odświeżają się po każdej zmianie wartości według której mają być sortowane, zmianie kolejności wyników lub zmianie wartości pola filtrowania.
 
 Następnie dodałem logowanie ilości wizyt i datę ostatniej wizyty, dane zapisują się do local storage.
+
+Zmieniłem właściwość 'display' wrappera z kartami z flex na grid, ułatwiło to odwzorowywanie zrzutów ekranu i dodanie responsywności rozmiaru kart.
