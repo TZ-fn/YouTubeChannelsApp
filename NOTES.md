@@ -20,3 +20,5 @@ Wyniki odświeżają się po każdej zmianie wartości według której mają by�
 Następnie dodałem logowanie ilości wizyt i datę ostatniej wizyty, dane zapisują się do local storage.
 
 Zmieniłem właściwość 'display' wrappera z kartami z flex na grid, ułatwiło to odwzorowywanie zrzutów ekranu i dodanie responsywności rozmiaru kart.
+
+Dodałem testy do aplikacji, używając Jest i @testing-library/jest-dom. Początkowo miałem problem z Jestem (nie chciał działać, wyrzucał błędy o słowie kluczowym "import", nie używałem wcześniej Jesta poza Reactem), ale po zainstalowaniu babel'a i odpowiedniej konfiguracji wszystko zaczęło działać poprawnie.
