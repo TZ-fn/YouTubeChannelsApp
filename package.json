@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/start.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "private": true,
   "license": "ISC",
@@ -16,8 +16,12 @@
     "koa-static": "5.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@testing-library/jest-dom": "^5.16.2",
+    "babel-jest": "^27.5.1",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1",
     "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.3",
