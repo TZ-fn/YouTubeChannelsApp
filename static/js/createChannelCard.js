@@ -53,10 +53,7 @@ export function createChannelCard(cardData) {
   views.append(viewsNumber);
 
   stats.append(subs, videos, views);
-
-  channelLink.append(logo);
-  channelLink.append(title);
-  channelLink.append(stats);
+  channelLink.append(logo, title, stats);
   card.append(channelLink);
 
   return card;
